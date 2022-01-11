@@ -11,7 +11,8 @@ import java.util.Set;
 public class Tattoo {
 
     @Id
-    @GeneratedValue
+    @Column(unique = true)
+    @NotNull
     private int id;
 
     @Column(unique = true)
@@ -33,10 +34,11 @@ public class Tattoo {
     @NotNull
     private BigDecimal price;
 
-    @OneToMany(mappedBy = "tattoo")
-    private Set<Order> orders;
+//    @OneToMany(mappedBy = "tattoo")
+//    private Set<Order> orders;
 
-    public Tattoo(String name, String description, String size, String color, BigDecimal price) {
+    public Tattoo(int id, String name, String description, String size, String color, BigDecimal price) {
+        this.id = id;
         this.name = name;
         this.description = description;
         this.size = size;
@@ -92,7 +94,7 @@ public class Tattoo {
         this.price = price;
     }
 
-    public Set<Order> getOrders() {
-        return orders;
-    }
+//    public Set<Order> getOrders() {
+//        return orders;
+//    }
 }

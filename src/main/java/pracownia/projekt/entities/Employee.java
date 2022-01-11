@@ -10,7 +10,8 @@ import java.util.Set;
 public class Employee {
 
     @Id
-    @GeneratedValue
+    @Column(unique = true)
+    @NotNull
     private int id;
 
     @Column
@@ -41,10 +42,11 @@ public class Employee {
     @NotNull
     private String homeAddress;
 
-    @OneToMany(mappedBy = "employee")
-    private Set<Order> orders;
+//    @OneToMany(mappedBy = "employee")
+//    private Set<Order> orders;
 
-    public Employee(String name, String surname, int experienceYears, String specialization, String phone, String city, String homeAddress) {
+    public Employee(int id, String name, String surname, int experienceYears, String specialization, String phone, String city, String homeAddress) {
+        this.id = id;
         this.name = name;
         this.surname = surname;
         this.experienceYears = experienceYears;
@@ -118,7 +120,7 @@ public class Employee {
         this.homeAddress = homeAddress;
     }
 
-    public Set<Order> getOrders() {
-        return orders;
-    }
+//    public Set<Order> getOrders() {
+//        return orders;
+//    }
 }

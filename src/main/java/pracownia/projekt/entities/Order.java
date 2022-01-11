@@ -2,7 +2,6 @@ package pracownia.projekt.entities;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 
@@ -11,7 +10,8 @@ import java.time.LocalDateTime;
 public class Order {
 
     @Id
-    @GeneratedValue
+    @Column(unique = true)
+    @NotNull
     private int id;
 
     @Column
@@ -34,17 +34,13 @@ public class Order {
     @NotNull
     private String bodyPart;
 
-    @Column
-    @NotNull
-    private BigDecimal total;
-
-    public Order(Employee employee, Client client, Tattoo tattoo, String bodyPart, BigDecimal total) {
+    public Order(int id, Employee employee, Client client, Tattoo tattoo, String bodyPart) {
+        this.id = id;
         this.dateTime = LocalDateTime.now();
         this.employee = employee;
         this.client = client;
         this.tattoo = tattoo;
         this.bodyPart = bodyPart;
-        this.total = total;
     }
 
     public Order() {
@@ -73,9 +69,5 @@ public class Order {
 
     public String getBodyPart() {
         return bodyPart;
-    }
-
-    public BigDecimal getTotal() {
-        return total;
     }
 }

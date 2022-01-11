@@ -5,7 +5,6 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import pracownia.projekt.entities.Client;
 import pracownia.projekt.repositories.ClientRepository;
-
 import java.util.Optional;
 
 

@@ -2,10 +2,10 @@ package pracownia.projekt.repositories;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.PagingAndSortingRepository;
-import pracownia.projekt.entities.Client;
+import pracownia.projekt.entities.Order;
 
 
-public interface ClientRepository extends CrudRepository<Client, Integer>, PagingAndSortingRepository<Client, Integer> {
+public interface OrderRepository extends CrudRepository<Order, Integer>, PagingAndSortingRepository<Order, Integer> {
 
 
 }

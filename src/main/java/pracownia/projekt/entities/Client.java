@@ -10,7 +10,8 @@ import java.util.Set;
 public class Client {
 
     @Id
-    @GeneratedValue
+    @Column(unique = true)
+    @NotNull
     private int id;
 
     @Column
@@ -28,10 +29,11 @@ public class Client {
     @Column
     private String email;
 
-    @OneToMany(mappedBy = "client")
-    private Set<Order> orders;
+//    @OneToMany(mappedBy = "client")
+//    private Set<Order> orders;
 
-    public Client(String name, String surname, String phone, String email) {
+    public Client(int id, String name, String surname, String phone, String email) {
+        this.id = id;
         this.name = name;
         this.surname = surname;
         this.phone = phone;
@@ -78,7 +80,7 @@ public class Client {
         this.email = email;
     }
 
-    public Set<Order> getOrders() {
-        return orders;
-    }
+//    public Set<Order> getOrders() {
+//        return orders;
+//    }
 }
