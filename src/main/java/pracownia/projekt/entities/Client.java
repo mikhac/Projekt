@@ -42,6 +42,10 @@ public class Client {
 
     }
 
+    public int getId() {
+        return id;
+    }
+
     public String getName() {
         return name;
     }
@@ -72,5 +76,9 @@ public class Client {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Set<Order> getOrders() {
+        return orders;
     }
 }

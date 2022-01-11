@@ -51,6 +51,10 @@ public class Order {
 
     }
 
+    public int getId() {
+        return id;
+    }
+
     public LocalDateTime getDateTime() {
         return dateTime;
     }

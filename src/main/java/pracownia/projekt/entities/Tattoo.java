@@ -14,7 +14,7 @@ public class Tattoo {
     @GeneratedValue
     private int id;
 
-    @Column
+    @Column(unique = true)
     @NotNull
     private String name;
 
@@ -46,6 +46,10 @@ public class Tattoo {
 
     public Tattoo() {
 
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getName() {
@@ -86,5 +90,9 @@ public class Tattoo {
 
     public void setPrice(BigDecimal price) {
         this.price = price;
+    }
+
+    public Set<Order> getOrders() {
+        return orders;
     }
 }

@@ -58,6 +58,10 @@ public class Employee {
 
     }
 
+    public int getId() {
+        return id;
+    }
+
     public String getName() {
         return name;
     }
@@ -112,5 +116,9 @@ public class Employee {
 
     public void setHomeAddress(String homeAddress) {
         this.homeAddress = homeAddress;
+    }
+
+    public Set<Order> getOrders() {
+        return orders;
     }
 }
