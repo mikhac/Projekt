@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import pracownia.projekt.entities.Employee;
 import pracownia.projekt.services.EmployeeService;
 import javax.validation.Valid;
+import java.util.Map;
 
 
 @RestController
@@ -38,6 +39,16 @@ public class EmployeeController {
         if (result == null)
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         return ResponseEntity.ok(result);
+    }
+
+    @GetMapping(value = "/employee/experience", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Iterable<Employee> getByMinExperienceYears(@RequestParam("years") int years) {
+        return employeeService.listByMinExperienceYears(years);
+    }
+
+    @GetMapping(value = "/employeesOrders/", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Iterable<Map<String, Object>> getEmployeesOrdersById(@RequestParam("employeeId") int employeeId) {
+        return employeeService.listEmployeesOrders(employeeId);
     }
 
 

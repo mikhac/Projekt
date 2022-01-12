@@ -16,6 +16,8 @@ import pracownia.projekt.services.OrderService;
 import pracownia.projekt.services.TattooService;
 
 import javax.validation.Valid;
+import java.util.Map;
+import java.util.Optional;
 
 
 @RestController
@@ -53,14 +55,11 @@ public class OrderController {
         return ResponseEntity.ok(order);
     }
 
+    @GetMapping(value = "/orders/{bodyPart}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Optional<Map<String, Object>> getCountByBodyPart(@PathVariable("bodyPart") String bodyPart) {
+        return orderService.countOrdersByBodyPart(bodyPart);
+    }
 
-//    @PostMapping(value = "/order")
-//    public ResponseEntity<Order> create(@RequestBody @NonNull @Valid Order order) {
-//        if (orderService.checkIfExist(order.getId()))
-//            return new ResponseEntity<>(HttpStatus.CONFLICT);
-//        orderService.saveOrder(order);
-//        return ResponseEntity.ok(order);
-//    }
 
     @PostMapping(value = "/order")
     public ResponseEntity<Order> createByParam(@RequestParam int id, @RequestParam int employeeId, @RequestParam int clientId,

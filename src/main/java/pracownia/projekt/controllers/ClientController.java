@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import pracownia.projekt.entities.Client;
 import pracownia.projekt.services.ClientService;
 import javax.validation.Valid;
+import java.util.Map;
 
 
 @RestController
@@ -38,6 +39,11 @@ public class ClientController {
         if (result == null)
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         return ResponseEntity.ok(result);
+    }
+
+    @GetMapping(value = "/clientsTattoos", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Iterable<Map<String, Object>> getClientsTattoosById(@RequestParam("clientId") int clientId) {
+        return clientService.listClientsTattoos(clientId);
     }
 
 

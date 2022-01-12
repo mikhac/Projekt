@@ -5,6 +5,8 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import pracownia.projekt.entities.Employee;
 import pracownia.projekt.repositories.EmployeeRepository;
+
+import java.util.Map;
 import java.util.Optional;
 
 
@@ -40,5 +42,13 @@ public class EmployeeService {
 
     public Iterable<Employee> listAllEmployeesPaging(Integer pageNr, Integer howManyOnPage) {
         return employeeRepository.findAll(PageRequest.of(pageNr, howManyOnPage));
+    }
+
+    public Iterable<Employee> listByMinExperienceYears(int years) {
+        return employeeRepository.findByMinExperience(years);
+    }
+
+    public Iterable<Map<String, Object>> listEmployeesOrders(int employeeId) {
+        return employeeRepository.listEmployeesOrders(employeeId);
     }
 }

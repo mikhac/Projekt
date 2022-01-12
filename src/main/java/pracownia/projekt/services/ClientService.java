@@ -5,6 +5,8 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import pracownia.projekt.entities.Client;
 import pracownia.projekt.repositories.ClientRepository;
+
+import java.util.Map;
 import java.util.Optional;
 
 
@@ -40,5 +42,9 @@ public class ClientService {
 
     public Iterable<Client> listAllClientsPaging(Integer pageNr, Integer howManyOnPage) {
         return clientRepository.findAll(PageRequest.of(pageNr, howManyOnPage));
+    }
+
+    public Iterable<Map<String, Object>> listClientsTattoos(int clientId) {
+        return clientRepository.listTattoosByClient(clientId);
     }
 }

@@ -1,10 +1,10 @@
 package pracownia.projekt.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import pracownia.projekt.entities.Order;
 import pracownia.projekt.repositories.OrderRepository;
+import java.util.Map;
 import java.util.Optional;
 
 
@@ -38,7 +38,7 @@ public class OrderService {
         return orderRepository.existsById(id);
     }
 
-    public Iterable<Order> listAllOrdersPaging(Integer pageNr, Integer howManyOnPage) {
-        return orderRepository.findAll(PageRequest.of(pageNr, howManyOnPage));
+    public Optional<Map<String, Object>> countOrdersByBodyPart(String bodyPart) {
+        return orderRepository.countOrdersByBodyPart(bodyPart);
     }
 }

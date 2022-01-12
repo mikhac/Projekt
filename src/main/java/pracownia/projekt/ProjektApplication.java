@@ -6,7 +6,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 
 @EnableSwagger2
-//@EnableJpaRepositories("pracownia.projekt.repositories")
 @SpringBootApplication
 public class ProjektApplication {
 
