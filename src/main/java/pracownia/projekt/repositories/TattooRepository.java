@@ -7,5 +7,4 @@ import pracownia.projekt.entities.Tattoo;
 
 public interface TattooRepository extends CrudRepository<Tattoo, Integer>, PagingAndSortingRepository<Tattoo, Integer> {
 
-
 }

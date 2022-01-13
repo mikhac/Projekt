@@ -62,13 +62,13 @@ public class IndexController {
         employeeService.deleteAllEmployees();
 
         Employee employee1 = new Employee(1, "Jan", "Kowal", 12, "abstrakcja", "456098123", "Warszawa", "Polna 12");
-        Employee employee2 = new Employee(2, "Jakub", "Muszla", 5, "rysunek", "634576623", "Otwock", "Ludwika 5");
-        Employee employee3 = new Employee(3, "Juan", "Cruz", 7, "realizm", "236773334", "Kolobrzeg", "Mozgowa 20");
+        Employee employee2 = new Employee(2, "Jakub", "Budka", 5, "rysunek", "634576623", "Otwock", "Ludwika 5");
+        Employee employee3 = new Employee(3, "Juan", "Cruz", 7, "realizm", "236773334", "Kolobrzeg", "Ciemna 20");
         Tattoo tattoo1 = new Tattoo(1, "Pajak", null, "sredni", "czarny", new BigDecimal("80.45"));
         Tattoo tattoo2 = new Tattoo(2, "Roza", "z cierniami", "duzy", "zielony, czerwony", new BigDecimal("50.70"));
         Tattoo tattoo3 = new Tattoo(3, "Gwiazda", null, "maly", "czarny", new BigDecimal("20.00"));
         Client client1 = new Client(1, "Agata", "Nowak", "123456789", "a.nowak@gmail.com");
-        Client client2 = new Client(2, "Beata", "Pneumatyczna", "123123123", "beta.pn@interia.pl");
+        Client client2 = new Client(2, "Beata", "Itacka", "123123123", "beta.pn@interia.pl");
         Client client3 = new Client(3, "Luis", "Bryza", "987654321", "luis.bryza@wp.pl");
         Order order1 = new Order(1, employee1, client3, tattoo3, "reka");
         Order order2 = new Order(2, employee3, client2, tattoo1, "noga");

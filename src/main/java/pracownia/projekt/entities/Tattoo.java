@@ -1,9 +1,11 @@
 package pracownia.projekt.entities;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
-import java.util.Set;
 
 
 @Entity
@@ -33,9 +35,6 @@ public class Tattoo {
     @Column
     @NotNull
     private BigDecimal price;
-
-//    @OneToMany(mappedBy = "tattoo")
-//    private Set<Order> orders;
 
     public Tattoo(int id, String name, String description, String size, String color, BigDecimal price) {
         this.id = id;
@@ -93,8 +92,4 @@ public class Tattoo {
     public void setPrice(BigDecimal price) {
         this.price = price;
     }
-
-//    public Set<Order> getOrders() {
-//        return orders;
-//    }
 }

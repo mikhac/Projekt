@@ -1,8 +1,10 @@
 package pracownia.projekt.entities;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import java.util.Set;
 
 
 @Entity
@@ -41,9 +43,6 @@ public class Employee {
     @Column
     @NotNull
     private String homeAddress;
-
-//    @OneToMany(mappedBy = "employee")
-//    private Set<Order> orders;
 
     public Employee(int id, String name, String surname, int experienceYears, String specialization, String phone, String city, String homeAddress) {
         this.id = id;
@@ -119,8 +118,4 @@ public class Employee {
     public void setHomeAddress(String homeAddress) {
         this.homeAddress = homeAddress;
     }
-
-//    public Set<Order> getOrders() {
-//        return orders;
-//    }
 }
