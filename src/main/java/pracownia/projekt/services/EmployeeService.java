@@ -1,7 +1,6 @@
 package pracownia.projekt.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import pracownia.projekt.entities.Employee;
 import pracownia.projekt.repositories.EmployeeRepository;
@@ -38,10 +37,6 @@ public class EmployeeService {
 
     public Boolean checkIfExist(Integer id) {
         return employeeRepository.existsById(id);
-    }
-
-    public Iterable<Employee> listAllEmployeesPaging(Integer pageNr, Integer howManyOnPage) {
-        return employeeRepository.findAll(PageRequest.of(pageNr, howManyOnPage));
     }
 
     public Iterable<Employee> listByMinExperienceYears(int years) {

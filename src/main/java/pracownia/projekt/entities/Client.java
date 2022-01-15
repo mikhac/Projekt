@@ -1,8 +1,10 @@
 package pracownia.projekt.entities;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import java.util.Set;
 
 
 @Entity
@@ -28,9 +30,6 @@ public class Client {
 
     @Column
     private String email;
-
-//    @OneToMany(mappedBy = "client")
-//    private Set<Order> orders;
 
     public Client(int id, String name, String surname, String phone, String email) {
         this.id = id;
@@ -79,8 +78,4 @@ public class Client {
     public void setEmail(String email) {
         this.email = email;
     }
-
-//    public Set<Order> getOrders() {
-//        return orders;
-//    }
 }

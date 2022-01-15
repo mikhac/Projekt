@@ -35,7 +35,7 @@ class OrderTest {
 
     @Test
     void getDateTime() {
-        assertTrue(order.getDateTime().isBefore(LocalDateTime.now()) || order.getDateTime().isEqual(LocalDateTime.now()));
+        assertFalse(order.getDateTime().isAfter(LocalDateTime.now()));
     }
 
     @Test

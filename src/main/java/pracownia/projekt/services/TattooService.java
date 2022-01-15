@@ -1,10 +1,10 @@
 package pracownia.projekt.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import pracownia.projekt.entities.Tattoo;
 import pracownia.projekt.repositories.TattooRepository;
+
 import java.util.Optional;
 
 
@@ -36,9 +36,5 @@ public class TattooService {
 
     public Boolean checkIfExist(Integer id) {
         return tattooRepository.existsById(id);
-    }
-
-    public Iterable<Tattoo> listAllTattoosPaging(Integer pageNr, Integer howManyOnPage) {
-        return tattooRepository.findAll(PageRequest.of(pageNr, howManyOnPage));
     }
 }
